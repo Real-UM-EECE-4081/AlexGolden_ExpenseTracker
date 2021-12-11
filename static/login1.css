@@ -1,0 +1,65 @@
+body, html {
+    height: 100%;
+      font-family: 'Calibri';
+      color: white;
+  }
+
+  .bg-image {
+    /* The image used */
+    background-color: #DDDDDD;
+    height: 100%;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+  
+  /* Position text in the middle of the page/image */
+  .bg-text {
+    background-color: white; /* Black w/opacity/see-through */
+    color: black;
+    font-weight: bold;
+    border: 3px solid white;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 28%;
+    height: 70%;
+    padding: 20px;
+    text-align: center;
+    line-height: 2em;
+  }
+  
+  .btnn button{
+      background-color: #3366FF;
+      border-radius: 20px;
+      border-color: #3366FF;
+      color: white;
+      padding: 4px;
+      padding-left: 35%;
+      padding-right: 35%;	
+      
+  }
+  
+  .btnn button:hover{
+      color: white;
+      transition: 0.2s;
+  }
+  
+  a {
+      color: #009999;
+      text-decoration: none;
+  
+  }
+  
+  a:hover{
+      color: black;
+      text-decoration: underline;
+  }

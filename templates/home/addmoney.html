@@ -1,0 +1,86 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'login1.css' %}">
+		<title>
+			Expense Tracker
+		</title>
+	</head>
+
+<body>
+	<div class="bg-image"></div>
+	<div class="bg-text">
+		<div>
+			<img src="../static/img/budgetlogo.png" ; style=width:30%;>
+		</div>
+		<div id="layoutAuthentication">
+			<div id="layoutAuthentication_content">
+				<main>
+					<div class="container2">
+						<div class="row justify-content-center">
+							<div class="col-lg-5">
+								<div class="card shadow-lg border-0 rounded-lg mt-5">
+									<div class="card-header">
+										<h1 class="text-center font-weight-light my-4">Add Transaction</h1>
+									</div>
+									<form method="post" action="/addmoney_submission/">
+										{% csrf_token %}
+
+
+										<div class="form-check">
+											Choose a transaction type<br>
+											<label class="form-check-label" for="add_money">
+												<input class="form-check-input" type="radio" name="add_money"
+													id="add_money" value="Expense" checked required>
+												Expense
+											</label>
+
+											<label class="form-check-label" for="add_money">
+												<input class="form-check-input" type="radio" name="add_money"
+													id="add_money" value="Income" checked required>
+												Income</label>
+										</div>
+
+
+										<div>
+											<label for="quantity">Amount:</label>
+											<input type="number" name="quantity" required><br>
+										</div>
+
+										<div>
+											<label>
+												Expense Date:
+												<input type="date" name="Date">
+											</label><br>
+										</div>
+										<div>
+											<div class="f1">
+												Category:
+												<select class="Category" name="Category" required><br>
+													<option value="Food">Food</option>
+													<option value="Travel">Travel</option>
+													<option value="Shopping">Shopping</option>
+													<option value="Necessities">Necessities</option>
+													<option value="Entertainment">Entertainment</option>
+													<option value="Other">Other</option>
+
+												</select><br>
+											</div>
+										</div><br>
+										<div class="btnn">
+											<button type="submit" class="b2" href='/addmoney'> Submit </button>
+										</div>
+										<!--<input type="button" class="b2"  onclick="location.href='/addmoney'" value="submit!">-->
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

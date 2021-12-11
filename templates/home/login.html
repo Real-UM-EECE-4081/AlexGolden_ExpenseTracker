@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" type="text/css" href="{% static 'login1.css' %}">
+</head>
+
+<body>
+    <div class="messages" id="alert-message">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} mb-0 alert-dismissible fade show" role="alert">
+            <strong>Message :</strong>{{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="bg-image"></div>
+    <div class="bg-text">
+
+        <body class="bg-primary">
+            <div id="layoutAuthentication">
+                <div id="layoutAuthentication_content">
+                    <main>
+                        <div class="container2">
+                            <div>
+                                <img src="../static/img/budgetlogo.png" ; style=width:30%;>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="col-lg-5">
+                                    <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                        <div class="card-header">
+                                            <h3 class="text-center font-weight-light my-4">Login to your Account</h3>
+                                        </div>
+                                        <div class="card-body">
+                                            <form action='/handlelogin/' method='post'>
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <input class="form-control py-4" id="loginuname" name="loginuname"
+                                                        type="text" placeholder="Username" required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <input class="form-control py-4" id="loginpassword1"
+                                                        name="loginpassword1" type="password" placeholder="Password"
+                                                        required />
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input class="custom-control-input" id="rememberPasswordCheck"
+                                                            type="checkbox" reqired />
+                                                        <label class="custom-control-label"
+                                                            for="rememberPasswordCheck">Remember password</label>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                    <div class="btnn">
+                                                        <button type="submit" class="btn">Login</button><br>
+                                                    </div>
+                                                    <div class="link">
+                                                        <a class="small" href="\reset_password"><br>Forgot
+                                                            Password</a><br>
+
+                                                        <div class="card-footer text-center">
+                                                            <div class="small"><a href="/register">Create an Account</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                    </main>
+                </div>
+        </body>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                setTimeout(function () {
+                    $("#alert-message").hide();
+                }, 2000);
+            });
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+</body>
+
+</html>
